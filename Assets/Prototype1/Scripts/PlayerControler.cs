@@ -13,6 +13,9 @@ public class PlayerControler : MonoBehaviour
     private float powerupStrength = 15.0f;
 
     public GameObject powerupIndicator;
+
+    public bool goodControls;
+    private RotateCamera RC;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +24,22 @@ public class PlayerControler : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float forwardInput = Input.GetAxis("Vertical");
-        playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
+        float horizontalInput = Input.GetAxis("Horizontal");
+
+        if (goodControls == false)
+        {
+            playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
+            focalPoint.GetComponent<RotateCamera>().enabled = true;
+        } else
+        {
+            playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
+            playerRb.AddForce(focalPoint.transform.right * speed * horizontalInput);
+            focalPoint.GetComponent<RotateCamera>().enabled = false;
+        }
+        
 
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
     }
@@ -58,5 +73,10 @@ public class PlayerControler : MonoBehaviour
             Debug.Log("Collided wit" + collision.gameObject.name + " with powerup set to " + hasPowerup);
             enemyBody.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse);
         }
+    }
+
+    public void ToggleControls()
+    {
+        goodControls = !goodControls;
     }
 }

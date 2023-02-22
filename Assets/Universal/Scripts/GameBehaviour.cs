@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameBehaviour : CH.Behaviour
 {
-
+    protected static UIManager _UI { get { return UIManager.Instance; } }
 }
 
 //
@@ -12,6 +12,7 @@ public class GameBehaviour : CH.Behaviour
 //
 public class GameBehaviour<T> : GameBehaviour where T : GameBehaviour
 {
+    public bool dontDestroy;
     static T _instance;
     public static T Instance
     {
@@ -21,6 +22,16 @@ public class GameBehaviour<T> : GameBehaviour where T : GameBehaviour
                 Debug.LogError("GameBehaviour<" + typeof(T).ToString() + "> not instantiated!\nNeed to call Instantiate() from " + typeof(T).ToString() + "Awake().");
             return _instance;
         }
+    }
+    protected virtual void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this as T;
+            if (dontDestroy) DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(gameObject);
     }
     //
     // Instantiate singleton
