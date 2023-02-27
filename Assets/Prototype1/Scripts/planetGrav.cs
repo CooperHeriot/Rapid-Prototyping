@@ -8,6 +8,8 @@ public class planetGrav : MonoBehaviour
 
     private Rigidbody rb;
     public float pull;
+
+    public LayerMask lay;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +25,16 @@ public class planetGrav : MonoBehaviour
 
         //RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, (transform.up * -1), out RaycastHit hit, Mathf.Infinity))
+        if (Physics.Raycast(transform.position, (transform.up * -1), out RaycastHit hit, Mathf.Infinity, lay))
         {
             //Quaternion matchSurface = transform.LookAt(transform.forward, hit.normal);
 
             transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
+
+/*
+            Quaternion turnRot = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, turnRot, 1 * Time.deltaTime);*/
 
         }
 

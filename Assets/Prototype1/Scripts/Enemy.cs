@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     private Rigidbody enemyRb;
     private GameObject player;
 
+    public bool notSpace;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,7 @@ public class Enemy : MonoBehaviour
         enemyRb.AddForce(lookDirection * speed);     
 
 
-        if (transform.position.y < -10)
+        if (transform.position.y < -10 && notSpace == true)
         {
             Destroy(gameObject);
         }
