@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KILL : GameBehaviour
 {
@@ -21,7 +22,8 @@ public class KILL : GameBehaviour
     {
         if (other.transform.tag == "Player")
         {
-            _PC.enabled = false;
+            // _PC.enabled = false;/
+            SceneManager.LoadScene("Prototype 1Title");
         }
 
         if (other.transform.tag == "Enemy")
