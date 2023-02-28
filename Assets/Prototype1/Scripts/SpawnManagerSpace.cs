@@ -9,15 +9,16 @@ public class SpawnManagerSpace : MonoBehaviour
     public int enemyCount;
     public int waveNuber = 1;
 
-    public GameObject powerupPrefab;
+    public GameObject powerupPrefab, deathZone;
 
-    public GameObject SpawnBox;
+    public GameObject SpawnBox, SpawnBox2;
 
     void Start()
     {
         SpawnEnemyWave(waveNuber);
 
         Instantiate(powerupPrefab, SpawnBox.transform.position, powerupPrefab.transform.rotation);
+        Instantiate(deathZone, SpawnBox2.transform.position, powerupPrefab.transform.rotation);
     }
 
     // Update is called once per frame
@@ -33,6 +34,7 @@ public class SpawnManagerSpace : MonoBehaviour
         {
             waveNuber++;
             Instantiate(powerupPrefab, SpawnBox.transform.position, powerupPrefab.transform.rotation);
+            Instantiate(deathZone, SpawnBox2.transform.position, powerupPrefab.transform.rotation);
             SpawnEnemyWave(waveNuber);
         }
     }

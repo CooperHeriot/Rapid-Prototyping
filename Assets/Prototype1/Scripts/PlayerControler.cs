@@ -10,7 +10,7 @@ public class PlayerControler : GameBehaviour<PlayerControler>
     private GameObject focalPoint;
 
     public bool hasPowerup;
-    private float powerupStrength = 15.0f;
+    public float powerupStrength = 15.0f;
 
     public GameObject powerupIndicator;
 
@@ -57,7 +57,7 @@ public class PlayerControler : GameBehaviour<PlayerControler>
 
     IEnumerator PowerupCountdownRoutine()
     {
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(14);
         hasPowerup = false;
         powerupIndicator.gameObject.SetActive(false);
     }
