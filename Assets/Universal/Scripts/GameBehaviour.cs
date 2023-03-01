@@ -7,6 +7,8 @@ public class GameBehaviour : CH.Behaviour
     protected static UIManager _UI { get { return UIManager.Instance; } }
     protected static PlayerControler _PC { get { return PlayerControler.Instance; } }
     protected static Score _SC { get { return Score.Instance; } }
+    protected static Timer _T { get { return Timer.Instance; } }
+    protected static GameManger _GM { get { return GameManger.Instance; } }
 }
 
 //

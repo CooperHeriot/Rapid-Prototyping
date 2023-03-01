@@ -6,13 +6,18 @@ using UnityEngine;
 
 public class UIManager : GameBehaviour<UIManager>
 {
-    public TMP_Text scoreText;
+    public TMP_Text scoreText, timerText;
     int score, scoreBonus = 50;
     public Ease ScoreEase;
     // Start is called before the first frame update
     void Start()
     {
         scoreText.text = score.ToString();
+    }
+
+    void Update()
+    {
+        timerText.text = _T.GetTime().ToString();
     }
 
     // Update is called once per frame
