@@ -16,11 +16,17 @@ public class PlayerControler : GameBehaviour<PlayerControler>
 
     public bool goodControls;
     private RotateCamera RC;
+
+    public GameObject gameOver;
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
         focalPoint = FindObjectOfType<RotateCamera>().gameObject;
+
+        gameOver = FindObjectOfType<Menu>().gameObject;
+
+        gameOver.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,6 +48,12 @@ public class PlayerControler : GameBehaviour<PlayerControler>
         
 
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
+
+        if (speed == 0)
+        {
+            _SC.halt = true;
+            gameOver.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -64,14 +76,17 @@ public class PlayerControler : GameBehaviour<PlayerControler>
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && hasPowerup)
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             Rigidbody enemyBody = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 awayFromPlayer = (collision.gameObject.transform.position - transform.position);
 
-
-            Debug.Log("Collided wit" + collision.gameObject.name + " with powerup set to " + hasPowerup);
-            enemyBody.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse);
+            if (hasPowerup == true)
+            {
+                Debug.Log("Collided wit" + collision.gameObject.name + " with powerup set to " + hasPowerup);
+                enemyBody.AddForce((awayFromPlayer * powerupStrength) * Time.deltaTime, ForceMode.Impulse);
+            }
+            enemyBody.AddForce((awayFromPlayer * 35) * Time.deltaTime, ForceMode.Impulse);
         }
     }
 

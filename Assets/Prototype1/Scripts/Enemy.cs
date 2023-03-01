@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : GameBehaviour
 {
     public float speed;
     private Rigidbody enemyRb;
@@ -10,11 +10,15 @@ public class Enemy : MonoBehaviour
 
     public bool notSpace;
 
+    public Score sca;
+
     // Start is called before the first frame update
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
+
+        sca = _SC;
     }
 
     // Update is called once per frame
@@ -27,6 +31,8 @@ public class Enemy : MonoBehaviour
 
         if (transform.position.y < -10 && notSpace == true)
         {
+            //sca.EnemyDead();
+
             Destroy(gameObject);
         }
 

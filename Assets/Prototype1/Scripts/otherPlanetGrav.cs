@@ -17,7 +17,7 @@ public class otherPlanetGrav : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 lookDirection = (Core.transform.position - transform.position).normalized;
 

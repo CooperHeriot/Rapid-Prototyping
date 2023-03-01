@@ -6,6 +6,7 @@ public class GameBehaviour : CH.Behaviour
 {
     protected static UIManager _UI { get { return UIManager.Instance; } }
     protected static PlayerControler _PC { get { return PlayerControler.Instance; } }
+    protected static Score _SC { get { return Score.Instance; } }
 }
 
 //
