@@ -7,7 +7,8 @@ public class planetGrav : MonoBehaviour
     public GameObject Core;
 
     private Rigidbody rb;
-    public float pull;
+    public float pull, pullp;
+    public float dist;
 
     public LayerMask lay;
     // Start is called before the first frame update
@@ -25,6 +26,16 @@ public class planetGrav : MonoBehaviour
 
         //RaycastHit hit;
 
+        dist = Vector3.Distance(transform.position, Core.transform.position);
+
+        if (dist > 16)
+        {
+            pullp = pull + (dist * 4);
+        } else
+        {
+            pullp = pull;
+        }
+
         if (Physics.Raycast(transform.position, (transform.up * -1), out RaycastHit hit, Mathf.Infinity, lay))
         {
             //Quaternion matchSurface = transform.LookAt(transform.forward, hit.normal);
@@ -38,6 +49,6 @@ public class planetGrav : MonoBehaviour
 
         }
 
-        rb.AddForce(lookDirection * pull);
+        rb.AddForce(lookDirection * pullp);
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class UIManager : GameBehaviour<UIManager>
 {
+    /*
     public TMP_Text scoreText, timerText;
     int score, scoreBonus = 50;
     public Ease ScoreEase;
@@ -27,5 +28,5 @@ public class UIManager : GameBehaviour<UIManager>
         {
             scoreText.text = "Score: " + score.ToString();
         });
-    }
+    }*/
 }

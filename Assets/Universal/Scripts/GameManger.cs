@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManger : GameBehaviour<GameManger>
 {
-    // Start is called before the first frame update
+  /*  // Start is called before the first frame update
     void Start()
     {
         //_T.ChangeDirection();
@@ -40,5 +40,5 @@ public class GameManger : GameBehaviour<GameManger>
         {
             print("bruh");
         }
-    }
+    }*/
 }

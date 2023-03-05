@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 4828dc86a9d786544a8ca36b5cd39b7b, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 19a92bf521e304876b631342a119543c, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Playe: {fileID: 0}
+  gameOver: {fileID: 0}
 --- !u!135 &68622916
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -315,6 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Playe: {fileID: 0}
+  gameOver: {fileID: 0}
 --- !u!135 &117549286
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -442,7 +444,9 @@ MonoBehaviour:
   enemyCount: 0
   waveNuber: 1
   powerupPrefab: {fileID: 6881465421662802781, guid: 246ee5767def5c54894a0073ea039a56, type: 3}
+  deathZone: {fileID: 0}
   SpawnBox: {fileID: 1940672885}
+  SpawnBox2: {fileID: 0}
 --- !u!1001 &245963551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -708,8 +712,10 @@ MonoBehaviour:
   dontDestroy: 0
   speed: 12
   hasPowerup: 0
+  powerupStrength: 15
   powerupIndicator: {fileID: 892599334}
   goodControls: 0
+  gameOver: {fileID: 0}
 --- !u!114 &280043497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1552,6 +1558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Playe: {fileID: 0}
+  gameOver: {fileID: 0}
 --- !u!135 &1128629906
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3295,7 +3302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9360c5e5ed7022e4eae732c7cbdc3353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: Prototype 1
+  SceneToLoad: Prototype1Intro
 --- !u!1 &1973273142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6907620951802010782, guid: 5d4e5f16eafa68740bd440b213e1f036, type: 3}

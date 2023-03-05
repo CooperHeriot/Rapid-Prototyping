@@ -7,7 +7,7 @@ using UnityEngine.Android;
 
 public class PlayTime : GameBehaviour
 {
-    public enum Direction
+  /*  public enum Direction
     {
         up, down, left, right
     }
@@ -33,7 +33,7 @@ public class PlayTime : GameBehaviour
         {
             ScaleToZero(player);
             print("bruh");
-        });*/
+        });*//*
     }
 
     // Update is called once per frame
@@ -104,5 +104,5 @@ public class PlayTime : GameBehaviour
     {
         Camera.main.DOShakePosition(tweenTime / 2, 0.4f);
         _UI.TweenScore();
-    }
+    }*/
 }

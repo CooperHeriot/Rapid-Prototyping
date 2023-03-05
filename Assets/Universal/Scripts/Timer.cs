@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public enum TimeDirection { CountUp, CountDown }
+//public enum TimeDirection { CountUp, CountDown }
 
 public class Timer : GameBehaviour<Timer>
 {
-
+/*
 
     public TimeDirection Direction; 
     public float startTime = 0;
@@ -86,5 +86,5 @@ public class Timer : GameBehaviour<Timer>
     public void ChangeDirection(TimeDirection _direction)
     {
         Direction = _direction;
-    }
+    }*/
 }
