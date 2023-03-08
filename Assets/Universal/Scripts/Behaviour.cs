@@ -90,6 +90,12 @@ namespace CH
         }
 
         #endregion
+
+        public T RandomEnum<T>()
+        {
+            var values = Enum.GetValues(typeof(T));
+            return (T)values.GetValue(UnityEngine.Random.Range(0, values.Length));
+        }
     }
 
 }
