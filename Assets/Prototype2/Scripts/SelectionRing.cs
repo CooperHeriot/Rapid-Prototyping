@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelectionRing : MonoBehaviour
 {
-    public float scalee;
+    public float scalee = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +14,11 @@ public class SelectionRing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localScale = new Vector3(scalee, scalee, scalee);
+        transform.localScale = new Vector3(scalee, transform.localScale.y, scalee);
+    }
+
+    public void ChangeSize(float newSize)
+    {
+        scalee = newSize;
     }
 }

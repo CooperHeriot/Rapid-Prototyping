@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
         {
             ring.SetActive(true);
             ring.transform.position = ringPos;
+            selRing.ChangeSize(Vector3.Distance(clickPoint.transform.position, currentPoint.transform.position));
         } else
         {
             ring.SetActive(false);
