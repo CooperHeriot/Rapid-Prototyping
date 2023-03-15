@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Powerup
   - Enemy
+  - Termite
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - Planet
   - 
-  - 
+  - floor
   - 
   - 
   - 

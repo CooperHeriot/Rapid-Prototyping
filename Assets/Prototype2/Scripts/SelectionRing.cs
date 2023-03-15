@@ -21,4 +21,20 @@ public class SelectionRing : MonoBehaviour
     {
         scalee = newSize;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Termite")
+        {
+            other.GetComponent<Termite>().Selected = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.tag == "Termite")
+        {
+            other.GetComponent<Termite>().Selected = false;
+        }
+    }
 }

@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameObject ring, clickPoint, currentPoint;
+    public GameObject ring, clickPoint, currentPoint, goTo;
     private SelectionRing selRing;
 
     public Vector3 ringPos;
 
     public bool dragging;
 
+    public Termite[] terms;
+
     //mouse stuff
     public Camera cam;
     public Vector3 screenPos, worldPosition;
     public float dist;
+    //public LayerMask flor;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +31,24 @@ public class Player : MonoBehaviour
         screenPos.z = dist;
 
         worldPosition = cam.ScreenToWorldPoint(screenPos);
+        //RaycastHit hit;
 
         currentPoint.transform.position = worldPosition;
 
 
         ringPos = ((clickPoint.transform.position + currentPoint.transform.position) / 2);
 
-        if (Input.GetMouseButton(0)){
+        if (Input.GetMouseButtonDown(0)){
+            clickPoint.transform.position = worldPosition;       
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            goTo.transform.position = worldPosition;
+        }
+
+        if (Input.GetMouseButton(0))
+        {
             dragging = true;
         } else
         {
