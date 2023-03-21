@@ -9,7 +9,7 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //restarter = SceneManager.GetActiveScene().ToString();
     }
 
     // Update is called once per frame
@@ -20,11 +20,27 @@ public class Menu : MonoBehaviour
 
     public void LoadTheScene()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneToLoad);
+        
+    }
+
+    public void Resstart()
+    {
+        Time.timeScale = 1;
+        //SceneManager.LoadScene(restarter);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Quitt()
     {
         Application.Quit();
+    }
+
+    public void TitleScreen()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Title");
+        
     }
 }
