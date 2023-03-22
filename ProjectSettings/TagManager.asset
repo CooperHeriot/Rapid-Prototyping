@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Termite
   - Food
+  - Tree
   layers:
   - Default
   - TransparentFX

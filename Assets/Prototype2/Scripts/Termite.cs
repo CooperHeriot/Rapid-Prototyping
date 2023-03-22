@@ -79,5 +79,20 @@ public class Termite : MonoBehaviour
             Destroy(other.gameObject);
             hasThing = true;
         }
+
+       /* if (other.transform.tag == "Enemy")
+        {
+            other.GetComponent<EnemyBug>().health -= 1;
+        }*/
+
+        
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.transform.tag == "Tree")
+        {
+            other.GetComponent<tree>().hurt();
+        }
     }
 }

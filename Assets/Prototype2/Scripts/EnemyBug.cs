@@ -22,6 +22,8 @@ public class EnemyBug : MonoBehaviour
     public mood bugState;
 
     private bool togle;
+
+    public GameObject drops;
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +80,13 @@ public class EnemyBug : MonoBehaviour
         } else
         {
             Navi.SetDestination(Target.transform.position);
+        }
+
+        if (health <= 1)
+        {
+            Instantiate(drops, transform.position, transform.rotation);
+
+            Destroy(gameObject);
         }
     }
 
