@@ -62,8 +62,12 @@ public class Termite : MonoBehaviour
 
         if (Vector3.Distance(transform.position,nest.transform.position) < 5)
         {
-            hasThing = false;
-           // nav.Stop();
+            if (hasThing == true)
+            {
+                nest.GetComponent<Spawner>().food += 5;
+            }
+
+            hasThing = false;  
         }
         
     }
