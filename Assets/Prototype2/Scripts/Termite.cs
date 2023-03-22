@@ -11,41 +11,69 @@ public class Termite : MonoBehaviour
 
     private float tim = 0.1f;
     private bool brug;
+
+    public GameObject nest;
+    public bool hasThing;
     //public V
     // Start is called before the first frame update
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
+        nest = GameObject.Find("Mound");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Selected == true)
+        if (hasThing == false)
         {
-            selfectIcon.SetActive(true);
+            if (Selected == true)
+            {
+                selfectIcon.SetActive(true);
+            }
+            else
+            {
+                selfectIcon.SetActive(false);
+            }
+
+            if (Input.GetMouseButtonDown(1) && Selected == true)
+            {
+                brug = true;
+
+                Selected = false;
+            }
+
+            if (brug == true)
+            {
+                tim -= 1 * Time.deltaTime;
+            }
+
+            if (tim <= 0)
+            {
+                nav.SetDestination(GameObject.Find("Goto").transform.position);
+                tim = 0.1f;
+                brug = false;
+            }
         } else
         {
-            selfectIcon.SetActive(false);
-        }
-
-        if (Input.GetMouseButtonDown(1) && Selected == true)
-        {
-            brug = true;
-            
+            nav.SetDestination(nest.transform.position);
             Selected = false;
         }
 
-        if (brug == true)
+        if (Vector3.Distance(transform.position,nest.transform.position) < 5)
         {
-            tim -= 1 * Time.deltaTime;
+            hasThing = false;
+           // nav.Stop();
         }
+        
+    }
 
-        if (tim <= 0)
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Food")
         {
-            nav.SetDestination(GameObject.Find("Goto").transform.position);
-            tim = 0.1f;
-            brug = false;
+            Destroy(other.gameObject);
+            hasThing = true;
         }
     }
 }
