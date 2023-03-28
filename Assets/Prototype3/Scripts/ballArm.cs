@@ -7,6 +7,10 @@ public class ballArm : MonoBehaviour
     public HingeJoint HJ1, HJ2;
 
     public float Spring1, spring2;
+
+    public GameObject basee;
+
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,8 @@ public class ballArm : MonoBehaviour
 
         //HJ1.spring.targetPosition = Spring1;
 
-        
+        float x = Input.GetAxis("Horizontal");
+
+        basee.transform.Rotate(0, x * speed, 0);
     }
 }
