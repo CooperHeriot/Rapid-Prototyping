@@ -17,14 +17,17 @@ public class Brick : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         StartPos = transform.position;
+
+        Controller.GetComponent<BuildController>().winAmount += 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, StartPos) > 3)
+        if (Vector3.Distance(transform.position, StartPos) > 3 && dead == false)
         {
             dead = true;
+            Controller.GetComponent<BuildController>().currentaAmount += 1;
         }
     }
 }
