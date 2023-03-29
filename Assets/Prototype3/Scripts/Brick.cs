@@ -11,6 +11,8 @@ public class Brick : MonoBehaviour
     public float dist;
 
     public GameObject Controller;
+
+    public Material ded;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class Brick : MonoBehaviour
         {
             dead = true;
             Controller.GetComponent<BuildController>().currentaAmount += 1;
+            GetComponent<MeshRenderer>().material = ded;
         }
     }
 }
