@@ -21,6 +21,8 @@ public class BuildController : MonoBehaviour
             Instantiate(particles);
             newThing.SetActive(true);
             once = true;
+
+            //transform.position = Vector3.Lerp(transform.position, new Vector3(100, 0, 0), 3 * Time.deltaTime);
         }
     }
 }
