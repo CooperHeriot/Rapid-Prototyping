@@ -21,12 +21,15 @@ public class Brick : MonoBehaviour
         StartPos = transform.position;
 
         Controller.GetComponent<BuildController>().winAmount += 1;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, StartPos) > 3 && dead == false)
+        frozen = Controller.GetComponent<BuildController>().started;
+
+        if (Vector3.Distance(transform.position, StartPos) > 4 && dead == false && frozen == false)
         {
             dead = true;
             Controller.GetComponent<BuildController>().currentaAmount += 1;

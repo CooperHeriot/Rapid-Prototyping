@@ -65,4 +65,10 @@ public class ballArm : MonoBehaviour
         Spring1 = Mathf.Clamp(Spring1, -80, 80);
         Spring2 = Mathf.Clamp(Spring2, -70, 70);
     }
+
+    public void resetArms()
+    {
+        Spring1 = 0;
+        Spring2 = 0;
+    }
 }
