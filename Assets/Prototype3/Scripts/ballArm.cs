@@ -62,8 +62,8 @@ public class ballArm : MonoBehaviour
             Spring2 -= 100 * Time.deltaTime;
         }
 
-        Spring1 = Mathf.Clamp(Spring1, -80, 80);
-        Spring2 = Mathf.Clamp(Spring2, -70, 70);
+        Spring1 = Mathf.Clamp(Spring1, -90, 90);
+        Spring2 = Mathf.Clamp(Spring2, -80, 80);
     }
 
     public void resetArms()

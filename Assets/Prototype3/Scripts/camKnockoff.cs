@@ -56,4 +56,12 @@ public class camKnockoff : MonoBehaviour
             }
         }
     }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.transform.tag == "bump")
+        {
+            knockedOff = true;
+        }
+    }
 }

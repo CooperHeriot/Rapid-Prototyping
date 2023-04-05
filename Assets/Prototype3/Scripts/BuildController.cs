@@ -23,7 +23,7 @@ public class BuildController : MonoBehaviour
     {
         if (started == true)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(0, transform.position.y, transform.position.z), 0.2f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(0, transform.position.y, transform.position.z), 1.8f * Time.deltaTime);
 
             if (Vector3.Distance(transform.position, new Vector3(0, transform.position.y, transform.position.z)) < 1)
             {
@@ -42,7 +42,7 @@ public class BuildController : MonoBehaviour
 
                 GameObject.Find("Player").GetComponent<ballArm>().resetArms();
             }
-            transform.position = Vector3.Lerp(transform.position, new Vector3(-900, transform.position.y, transform.position.z), 0.2f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(-300, transform.position.y, transform.position.z), 1.8f * Time.deltaTime);
 
             if (Vector3.Distance(transform.position, new Vector3(-900, transform.position.y, transform.position.z)) < 100)
             {
