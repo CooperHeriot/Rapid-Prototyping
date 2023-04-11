@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  sensitivity: 5
+  sensitivity: 50
   Camlook: {fileID: 1226356302}
 --- !u!54 &998124064
 Rigidbody:
