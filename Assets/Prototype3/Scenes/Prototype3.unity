@@ -50324,7 +50324,7 @@ MonoBehaviour:
   dist: 0
   Controller: {fileID: 974192726}
   ded: {fileID: 2100000, guid: 3e96c90ac22f3de4db8fb5d7954bac5e, type: 2}
-  dust: {fileID: 0}
+  dust: {fileID: 1366599972190181907, guid: 64e15f2be1fe9e349b1d1a8b2fe01a78, type: 3}
 --- !u!65 &668699134
 BoxCollider:
   m_ObjectHideFlags: 0
