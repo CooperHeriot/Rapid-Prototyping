@@ -10,6 +10,7 @@ TagManager:
   - Food
   - Tree
   - bump
+  - ghost
   layers:
   - Default
   - TransparentFX
@@ -27,11 +28,11 @@ TagManager:
   - camfloor
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Addition
+  - Subtraction
+  - Multiplication
+  - Division
+  - Algebrah
   - 
   - 
   - 

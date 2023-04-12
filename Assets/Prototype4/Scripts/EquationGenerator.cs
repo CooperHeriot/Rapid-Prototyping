@@ -17,7 +17,7 @@ public class EquationGenerator : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.M))
+        /*if (Input.GetKeyDown(KeyCode.M))
             GenerateMultiplication();
         if (Input.GetKeyDown(KeyCode.A))
             GenerateAddition();
@@ -25,7 +25,7 @@ public class EquationGenerator : MonoBehaviour
             GenerateDivision();
 
         if (Input.GetKeyDown(KeyCode.R))
-            GenerateRandomEquation();
+            GenerateRandomEquation();*/
         
     }
 

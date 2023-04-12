@@ -13,6 +13,8 @@ public class FpsController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+       // Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -35,8 +37,8 @@ public class FpsController : MonoBehaviour
 
         MouseY = Mathf.Clamp(MouseY, -90, 90);*/
 
-        transform.Rotate(0, Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime, 0);
-        Camlook.transform.Rotate(-Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime, 0, 0);
+        transform.Rotate(0, Input.GetAxis("Mouse X") * (sensitivity * 10) * Time.deltaTime, 0);
+        Camlook.transform.Rotate(-Input.GetAxis("Mouse Y") * (sensitivity * 10) * Time.deltaTime, 0, 0);
 
         float cameraXRot = Camlook.transform.localEulerAngles.x;
         if (cameraXRot > 180)
