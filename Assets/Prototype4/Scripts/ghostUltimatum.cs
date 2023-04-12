@@ -8,6 +8,10 @@ public class ghostUltimatum : MonoBehaviour
     public TextMeshProUGUI TP;
     public GhostFinder Gf;
 
+    public FpsController Fp;
+
+    public GameObject Menu;
+
     public bool once = false;
     // Start is called before the first frame update
     void Start()
