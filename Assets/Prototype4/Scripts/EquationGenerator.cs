@@ -29,7 +29,7 @@ public class EquationGenerator : MonoBehaviour
         
     }
 
-    void GenerateRandomEquation()
+    public void GenerateRandomEquation()
     {
         int rnd = Random.Range(1, 100);
         if (rnd <= 35)
@@ -42,7 +42,7 @@ public class EquationGenerator : MonoBehaviour
             GenerateDivision();
     }
 
-    void GenerateMultiplication()
+    public void GenerateMultiplication()
     {
         numberOne = GetRandomNumbers();
         numberTwo = GetRandomNumbers();
@@ -53,7 +53,7 @@ public class EquationGenerator : MonoBehaviour
         GenerateDummyAnswers();
     }
 
-    void GenerateAddition()
+    public void GenerateAddition()
     {
         numberOne = GetRandomNumbers();
         numberTwo = GetRandomNumbers();
@@ -64,7 +64,7 @@ public class EquationGenerator : MonoBehaviour
         GenerateDummyAnswers();
     }
 
-    void GenerateSubtraction()
+    public void GenerateSubtraction()
     {
         numberOne = GetRandomNumbers();
         numberTwo = GetRandomNumbers();
@@ -75,7 +75,7 @@ public class EquationGenerator : MonoBehaviour
         GenerateDummyAnswers();
     }
 
-    void GenerateDivision()
+    public void GenerateDivision()
     {
         numberOne = GetRandomNumbers();
         numberTwo = GetRandomNumbers();

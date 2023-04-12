@@ -15,13 +15,13 @@ public class GhostFinder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            HoldP = true;
-        } else
+            HoldP = !HoldP;
+        } /*else
         {
             HoldP = false;
-        }
+        }*/
 
         if (HoldP == true)
         {

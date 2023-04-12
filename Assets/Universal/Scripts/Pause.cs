@@ -6,6 +6,8 @@ public class Pause : MonoBehaviour
 {
     public GameObject PausePanel;
     public bool Paused;
+
+    public bool lockCursor;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,14 @@ public class Pause : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Paused = !Paused;
+        }
+
+        if (lockCursor == true && Paused == false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        } else
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
