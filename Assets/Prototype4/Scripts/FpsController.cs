@@ -9,6 +9,8 @@ public class FpsController : MonoBehaviour
     public float sensitivity;
 
     public GameObject Camlook;
+
+    public bool noWalk;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,9 +30,11 @@ public class FpsController : MonoBehaviour
         Movementvector = Movementvector.normalized;
 
         //rb.AddForce((Movementvector * speed * 100) * Time.deltaTime, ForceMode.Force);
-        rb.AddForce((transform.forward * speed * z * 200) * Time.deltaTime);
-        rb.AddForce((transform.right * speed * x * 200) * Time.deltaTime);
-
+        if (noWalk == false)
+        {
+            rb.AddForce((transform.forward * speed * z * 200) * Time.deltaTime);
+            rb.AddForce((transform.right * speed * x * 200) * Time.deltaTime);
+        }       
 
         /*float MouseX = Input.GetAxis("Mouse X") * sensitivity;
         float MouseY = Input.GetAxis("Mouse Y") * sensitivity;
