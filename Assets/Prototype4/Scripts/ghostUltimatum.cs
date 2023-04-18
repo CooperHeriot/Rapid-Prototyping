@@ -13,6 +13,8 @@ public class ghostUltimatum : MonoBehaviour
     public GameObject THeGost;
     public EquationGenerator EG;
 
+    public GameObject Question;
+
     public TMP_InputField INP;
 
     public FpsController Fp;
@@ -20,10 +22,16 @@ public class ghostUltimatum : MonoBehaviour
     //public GameObject Menu;
 
     public bool once = false;
+    public bool happening = false;
+
+    private Pause PP;
     // Start is called before the first frame update
     void Start()
     {
         //INP = INPbase.GetComponent<TMP_InputField>
+        Question.SetActive(false);
+
+        PP = GameObject.Find("PauseContainer").GetComponent<Pause>();
     }
 
     // Update is called once per frame
@@ -34,6 +42,8 @@ public class ghostUltimatum : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, 10)){ 
             if (hit.transform.tag == "ghost" && Gf.HoldP == true && once == false)
             {
+                happening = true;
+
                 THeGost = hit.transform.gameObject;
 
                 EG = hit.transform.gameObject.GetComponent<EquationGenerator>();
@@ -41,6 +51,8 @@ public class ghostUltimatum : MonoBehaviour
                 WhatAmI Wah = hit.transform.gameObject.GetComponent<WhatAmI>();
 
                 Fp.noWalk = true;
+
+                Question.SetActive(true);
 
                 if (Wah.add == true)
                 {
@@ -57,16 +69,27 @@ public class ghostUltimatum : MonoBehaviour
                 //print("zaza");
             }
 
-            if (INP.text == EG.correctAnswer.ToString() && once == true)
+            if (INP.text == EG.correctAnswer.ToString() && happening == true)
             {
                 THeGost.SetActive(false);
                 THeGost = null;
                 EG = null;
                 Fp.noWalk = false;
                 once = false;
+                Question.SetActive(false);
+
+                happening = false;
             }
 
 
+            if (happening == true)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
 
         /*if (INP.text == "zaza")

@@ -265,9 +265,11 @@ MonoBehaviour:
   Gf: {fileID: 145682733}
   THeGost: {fileID: 0}
   EG: {fileID: 0}
+  Question: {fileID: 1810087137}
   INP: {fileID: 2125136529}
   Fp: {fileID: 998124063}
   once: 0
+  happening: 0
 --- !u!1 &96477664
 GameObject:
   m_ObjectHideFlags: 0

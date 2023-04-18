@@ -34,16 +34,18 @@ public class FpsController : MonoBehaviour
         {
             rb.AddForce((transform.forward * speed * z * 200) * Time.deltaTime);
             rb.AddForce((transform.right * speed * x * 200) * Time.deltaTime);
-        }       
+        }
 
         /*float MouseX = Input.GetAxis("Mouse X") * sensitivity;
         float MouseY = Input.GetAxis("Mouse Y") * sensitivity;
 
         MouseY = Mathf.Clamp(MouseY, -90, 90);*/
-
-        transform.Rotate(0, Input.GetAxis("Mouse X") * (sensitivity * 10) * Time.deltaTime, 0);
-        Camlook.transform.Rotate(-Input.GetAxis("Mouse Y") * (sensitivity * 10) * Time.deltaTime, 0, 0);
-
+        if (noWalk == false)
+        {
+            transform.Rotate(0, Input.GetAxis("Mouse X") * (sensitivity * 10) * Time.deltaTime, 0);
+            Camlook.transform.Rotate(-Input.GetAxis("Mouse Y") * (sensitivity * 10) * Time.deltaTime, 0, 0);
+        }
+        
         float cameraXRot = Camlook.transform.localEulerAngles.x;
         if (cameraXRot > 180)
         {
