@@ -25,6 +25,7 @@ public class ghostUltimatum : MonoBehaviour
     public bool happening = false;
 
     private Pause PP;
+    public GameObject ScaryPause, theScary;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,8 @@ public class ghostUltimatum : MonoBehaviour
         Question.SetActive(false);
 
         PP = GameObject.Find("PauseContainer").GetComponent<Pause>();
+
+        theScary.SetActive(false);
     }
 
     // Update is called once per frame
@@ -93,6 +96,8 @@ public class ghostUltimatum : MonoBehaviour
                     once = true;
 
                     //EG.GenerateDivision();
+                    PP.PausePanel = ScaryPause;
+                    theScary.SetActive(true);
 
                     TP.text = ("cos2(x) + sin2(x) = (eix + e - ix)2 / 4 + sin2(x) = (e2ix + e - 2ix )/ 4 + e2ln(sin(x)) + 1 / 2 = ?");
                 }
@@ -106,7 +111,8 @@ public class ghostUltimatum : MonoBehaviour
 
             if (INP.text == EG.correctAnswer.ToString() && happening == true)
             {
-                THeGost.SetActive(false);
+                //THeGost.SetActive(false);
+                THeGost.GetComponent<WhatAmI>().Dead();
                 THeGost = null;
                 EG = null;
                 Fp.noWalk = false;

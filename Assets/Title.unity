@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9360c5e5ed7022e4eae732c7cbdc3353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: Prototype 1Title
+  SceneToLoad: 
 --- !u!114 &144086776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2643,7 +2643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9360c5e5ed7022e4eae732c7cbdc3353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: Prototype4
+  SceneToLoad: Prototype4Title
 --- !u!114 &1196421428
 MonoBehaviour:
   m_ObjectHideFlags: 0
