@@ -7,11 +7,11 @@ public class Pause : MonoBehaviour
     public GameObject PausePanel;
     public bool Paused;
 
-    public bool lockCursor;
+    public bool lockCursor, LC;
     // Start is called before the first frame update
     void Start()
     {
-        
+        LC = false;
     }
 
     // Update is called once per frame
@@ -31,14 +31,18 @@ public class Pause : MonoBehaviour
         {
             Paused = !Paused;
         }
-
-        if (lockCursor == true && Paused == false)
+        if (LC == false)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-        } else
-        {
-            Cursor.lockState = CursorLockMode.None;
+            if (lockCursor == true && Paused == false)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
+        
     }
 
     public void PauseTogggle()

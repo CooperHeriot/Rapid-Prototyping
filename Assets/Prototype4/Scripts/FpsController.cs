@@ -54,4 +54,9 @@ public class FpsController : MonoBehaviour
         cameraXRot = Mathf.Clamp(cameraXRot, -70, 70);
         Camlook.transform.localRotation = Quaternion.Euler(cameraXRot, 0, 0);
     }
+
+    public void ChangeSensitivity (float newS){
+        sensitivity = newS;
+    }
+
 }

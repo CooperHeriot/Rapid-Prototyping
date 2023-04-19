@@ -62,8 +62,43 @@ public class ghostUltimatum : MonoBehaviour
 
                     TP.text = (EG.numberOne + " + " + EG.numberTwo + " = ?");
                 }
+                if (Wah.sub == true)
+                {
+                    once = true;
 
-                
+                    EG.GenerateSubtraction();
+
+                    TP.text = (EG.numberOne + " - " + EG.numberTwo + " = ?");
+                }
+                if (Wah.mult == true)
+                {
+                    once = true;
+
+                    EG.GenerateMultiplication();
+
+                    TP.text = (EG.numberOne + " x " + EG.numberTwo + " = ?");
+                }
+                if (Wah.div == true)
+                {
+                    once = true;
+
+                    EG.GenerateDivision();
+
+                    TP.text = (EG.numberOne + " ÷ " + EG.numberTwo + " = ?");
+                }
+
+
+                if (Wah.evil == true)
+                {
+                    once = true;
+
+                    //EG.GenerateDivision();
+
+                    TP.text = ("cos2(x) + sin2(x) = (eix + e - ix)2 / 4 + sin2(x) = (e2ix + e - 2ix )/ 4 + e2ln(sin(x)) + 1 / 2 = ?");
+                }
+
+
+
             } else
             {
                 //print("zaza");
@@ -79,16 +114,20 @@ public class ghostUltimatum : MonoBehaviour
                 Question.SetActive(false);
 
                 happening = false;
+
+                INP.text = "";
             }
 
 
             if (happening == true)
             {
-                Cursor.lockState = CursorLockMode.Locked;
+                PP.LC = true;
+                Cursor.lockState = CursorLockMode.None;
             }
             else
             {
-                Cursor.lockState = CursorLockMode.None;
+                PP.LC = false;
+                Cursor.lockState = CursorLockMode.Locked;
             }
         }
 
