@@ -729,7 +729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6507320228225447271, guid: a58a244195e32f343b80e9fe0dc2a9d2, type: 3}
       propertyPath: SceneToLoad
-      value: Prototype3Menu
+      value: Prototype2Title
       objectReference: {fileID: 0}
     - target: {fileID: 6507320229025970082, guid: a58a244195e32f343b80e9fe0dc2a9d2, type: 3}
       propertyPath: m_Name
