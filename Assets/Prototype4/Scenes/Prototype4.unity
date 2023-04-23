@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.09170785, g: 0.091887675, b: 0.08216452, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -535,7 +535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5896720939178537018, guid: 52d4b2b77dfcf6c47984c33019898977, type: 3}
       propertyPath: difficulty
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5896720939178537019, guid: 52d4b2b77dfcf6c47984c33019898977, type: 3}
       propertyPath: m_RootOrder
@@ -756,7 +756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1291799390754479262, guid: 297cabad0ce9cce4aa0320d2459f97d5, type: 3}
       propertyPath: difficulty
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1291799390754479263, guid: 297cabad0ce9cce4aa0320d2459f97d5, type: 3}
       propertyPath: m_RootOrder
@@ -1284,7 +1284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2595407856905147527, guid: af8aa77aa2e2deb4c9ac83a350cd4a73, type: 3}
       propertyPath: difficulty
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af8aa77aa2e2deb4c9ac83a350cd4a73, type: 3}
@@ -4923,7 +4923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5896720939178537018, guid: 52d4b2b77dfcf6c47984c33019898977, type: 3}
       propertyPath: difficulty
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5896720939178537019, guid: 52d4b2b77dfcf6c47984c33019898977, type: 3}
       propertyPath: m_RootOrder
@@ -5840,7 +5840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9042325248548136433, guid: d5d179de3ac68f443b92c2eb3760efef, type: 3}
       propertyPath: difficulty
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9042325248548136435, guid: d5d179de3ac68f443b92c2eb3760efef, type: 3}
       propertyPath: m_Name
@@ -6815,7 +6815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1291799390754479262, guid: 297cabad0ce9cce4aa0320d2459f97d5, type: 3}
       propertyPath: difficulty
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1291799390754479263, guid: 297cabad0ce9cce4aa0320d2459f97d5, type: 3}
       propertyPath: m_RootOrder
@@ -10101,7 +10101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9042325248548136433, guid: d5d179de3ac68f443b92c2eb3760efef, type: 3}
       propertyPath: difficulty
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9042325248548136435, guid: d5d179de3ac68f443b92c2eb3760efef, type: 3}
       propertyPath: m_Name

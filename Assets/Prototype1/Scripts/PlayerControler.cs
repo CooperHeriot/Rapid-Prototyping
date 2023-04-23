@@ -24,7 +24,7 @@ public class PlayerControler : GameBehaviour<PlayerControler>
         playerRb = GetComponent<Rigidbody>();
         focalPoint = FindObjectOfType<RotateCamera>().gameObject;
 
-        gameOver = FindObjectOfType<Menu>().gameObject;
+        //gameOver = FindObjectOfType<Menu>().gameObject;
 
         gameOver.SetActive(false);
     }
