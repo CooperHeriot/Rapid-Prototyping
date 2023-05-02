@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChameleonMove : MonoBehaviour
 {
-    public float speed;
+    public float speed, MSpeed = 14, ASpeed = 5, jump = 2;
 
     public Rigidbody rb;
 
@@ -123,7 +123,7 @@ public class ChameleonMove : MonoBehaviour
 
             rb.useGravity = false;
             rb.drag = 3f;
-            speed = 14;
+            speed = MSpeed;
 
             rb.AddRelativeForce(0, (howHighDoIHover - BodoffGround), 0);
 
@@ -134,15 +134,15 @@ public class ChameleonMove : MonoBehaviour
 
             //SILLY LITTLE JUMP TEST
 
-            if (Input.GetKey(KeyCode.Q))
+            /*if (Input.GetKeyDown(KeyCode.Space))
             {
-                rb.AddRelativeForce(0, 50, 0, ForceMode.VelocityChange);
-            }
+                rb.AddRelativeForce(0, jump, 0, ForceMode.VelocityChange);
+            }*/
         } else
         {
             rb.useGravity = true;
             rb.drag = 0.2f;
-            speed = 5;
+            speed = ASpeed;
             if (Physics.Raycast(transform.position, Vector3.down, out hit, distToFloor))
             {
                 grounded = true;
@@ -162,6 +162,12 @@ public class ChameleonMove : MonoBehaviour
         if (LookCarry.magnitude <= 0.1f)
         {
             MainBod.transform.Rotate(0, -Input.GetAxis("Mouse X") * (turnSens * 4) * Time.deltaTime, 0);
+        }
+
+
+        if (Input.GetKey(KeyCode.Space) && grounded == true)
+        {
+            rb.AddRelativeForce(0, ((jump * 30) * Time.deltaTime), 0, ForceMode.VelocityChange);
         }
     }
 }
