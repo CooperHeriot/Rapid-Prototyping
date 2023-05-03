@@ -18,6 +18,10 @@ public class giantWalk : MonoBehaviour
     private float sped, timer;
 
     private NavMeshAgent Nav;
+
+    public GameObject playa;
+
+    private bool PB = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +32,8 @@ public class giantWalk : MonoBehaviour
         ChangeDest(point1);
 
         timer = 3;
+
+        playa = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -144,6 +150,13 @@ public class giantWalk : MonoBehaviour
         {
             print("fsdfsdfdsfds");
         }*/
+
+        if (engaged == true)
+        {
+            ChangeDest(playa);
+
+           // PB = true;
+        }
     }
 
     public void One()
@@ -169,59 +182,66 @@ public class giantWalk : MonoBehaviour
 
     public void ChangeDest(GameObject NewDest)
     {
-        print("sfds");
-
-        CurrentDest = NewDest;
-
-        Nav.SetDestination(CurrentDest.transform.position);
-
-       /* if (CurrentDest == point1)
+        if (engaged == false)
         {
-            print("fsdfsdfdsfds");
-        }*/
+            print("sfds");
+
+            CurrentDest = NewDest;
+
+            Nav.SetDestination(CurrentDest.transform.position);
+
+            /* if (CurrentDest == point1)
+             {
+                 print("fsdfsdfdsfds");
+             }*/
+        }
+
     }
 
     public void turnOff(float num)
     {
+        if (engaged == false)
+        {
+            if (num == 1)
+            {
+                p1 = true;
+                p2 = false;
+                p3 = false;
+                p4 = false;
+
+                print("323");
+            }
+
+            if (num == 2)
+            {
+                p1 = false;
+                p2 = true;
+                p3 = false;
+                p4 = false;
+
+                print("435436");
+            }
+
+            if (num == 3)
+            {
+                p1 = false;
+                p2 = false;
+                p3 = true;
+                p4 = false;
+
+                print("5867");
+            }
+
+            if (num == 4)
+            {
+                p1 = false;
+                p2 = false;
+                p3 = false;
+                p4 = true;
+
+                print("098");
+            }
+        }
         
-        if (num == 1)
-        {
-            p1 = true;
-            p2 = false;
-            p3 = false;
-            p4 = false;
-
-            print("323");
-        }
-
-        if (num == 2)
-        {
-            p1 = false;
-            p2 = true;
-            p3 = false;
-            p4 = false;
-
-            print("435436");
-        }
-
-        if (num == 3)
-        {
-            p1 = false;
-            p2 = false;
-            p3 = true;
-            p4 = false;
-
-            print("5867");
-        }
-
-        if (num == 4)
-        {
-            p1 = false;
-            p2 = false;
-            p3 = false;
-            p4 = true;
-
-            print("098");
-        }
     }
 }

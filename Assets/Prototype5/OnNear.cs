@@ -8,7 +8,7 @@ public class OnNear : MonoBehaviour
 
     private GameObject Player;
 
-    public float dist, radius;
+    public float dist, radius = 10;
     // Start is called before the first frame update
     void Start()
     {

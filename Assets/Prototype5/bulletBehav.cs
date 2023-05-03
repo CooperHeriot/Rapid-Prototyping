@@ -6,6 +6,7 @@ public class bulletBehav : MonoBehaviour
 {
     public float force;
     private Rigidbody rb;
+    public float timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,21 @@ public class bulletBehav : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timer -= 1 * Time.deltaTime;
+
+        if (timer <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.GetComponent<EnemyHealth>() != null)
+        {
+            collision.transform.GetComponent<EnemyHealth>().Hurt();
+
+            Destroy(gameObject);
+        }
     }
 }

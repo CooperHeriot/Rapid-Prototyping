@@ -8,6 +8,10 @@ public class PlayerHealth : MonoBehaviour
     private float maxHp, CD;
     public float Countdown = 5;
 
+    public ChameleonMove CM;
+
+    public GameObject gameOver;
+
     public bool dead;
     // Start is called before the first frame update
     void Start()
@@ -32,6 +36,11 @@ public class PlayerHealth : MonoBehaviour
         {
             Countdown -= 1 * Time.deltaTime;
         }
+
+        if (dead == true)
+        {
+            CM.enabled = false;
+        }
     }
 
     public void hurt()
@@ -39,5 +48,10 @@ public class PlayerHealth : MonoBehaviour
         Countdown = CD;
 
         currentHealth -= 1;
+
+        if (currentHealth <= 0)
+        {
+            dead = true;
+        }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class shoot : MonoBehaviour
 {
-    public GameObject bullet, firingPoint, GunModel;
+    public GameObject bullet, firingPoint1, firingPoint2, GunModel, camera;
 
     public bool haveGun = false;
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class shoot : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Instantiate(bullet, firingPoint.transform.position, firingPoint.transform.rotation);
+                Instantiate(bullet, firingPoint1.transform.position, firingPoint1.transform.rotation);
             }
 
             GunModel.SetActive(true);
@@ -29,6 +29,7 @@ public class shoot : MonoBehaviour
             GunModel.SetActive(false);
         }
 
+        firingPoint2.transform.rotation = camera.transform.rotation;
     }
 
 
@@ -37,6 +38,8 @@ public class shoot : MonoBehaviour
         if (other.gameObject.transform.tag == "Gun")
         {
             haveGun = true;
+
+            Destroy(other.gameObject);
         }
     }
 }
