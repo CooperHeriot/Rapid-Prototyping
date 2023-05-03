@@ -19,7 +19,7 @@ public class WaterpushUp : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<Rigidbody>() != null)
+        if (other.GetComponent<Rigidbody>() != null && other.transform.tag != "bullet")
         {
             other.GetComponent<Rigidbody>().AddForce(0, power, 0);
         }

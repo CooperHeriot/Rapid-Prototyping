@@ -12,6 +12,7 @@ TagManager:
   - bump
   - ghost
   - Gun
+  - bullet
   layers:
   - Default
   - TransparentFX
