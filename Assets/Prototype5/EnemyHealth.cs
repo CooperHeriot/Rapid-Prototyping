@@ -9,6 +9,10 @@ public class EnemyHealth : MonoBehaviour
     private float maxHP;
 
     public bool dead;
+
+    public GameObject onDeath;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +24,10 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            dead = true;
+            //dead = true;
+            Instantiate(onDeath, transform.position, transform.rotation);
+
+            Destroy(gameObject);
         }
     }
 
