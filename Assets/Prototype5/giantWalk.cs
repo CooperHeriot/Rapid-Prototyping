@@ -151,50 +151,61 @@ public class giantWalk : MonoBehaviour
             print("fsdfsdfdsfds");
         }*/
 
-        if (engaged == true)
+        if (engaged == true && PB == false)
         {
             ChangeDest(playa);
 
-           // PB = true;
+            //PB = true;
         }
     }
 
     public void One()
     {
-        ChangeDest(point1);
-        turnOff(1);
+        if (engaged == false)
+        {
+            ChangeDest(point1);
+            turnOff(1);
+        }
     }
     public void Two()
     {
-        ChangeDest(point2);
-        turnOff(2);
+        if (engaged == false)
+        {
+            ChangeDest(point2);
+            turnOff(2);
+        }
     }
     public void Three()
     {
-        ChangeDest(point3);
-        turnOff(3);
+        if (engaged == false)
+        {
+            ChangeDest(point3);
+            turnOff(3);
+        }
     }
     public void Four()
     {
-        ChangeDest(point4);
-        turnOff(4);
+        if (engaged == false)
+        {
+            ChangeDest(point4);
+            turnOff(4);
+        }
+        
     }
 
     public void ChangeDest(GameObject NewDest)
-    {
-        if (engaged == false)
+    {        
+        print("sfds");
+
+        CurrentDest = NewDest;
+
+        Nav.SetDestination(CurrentDest.transform.position);
+
+        /* if (CurrentDest == point1)
         {
-            print("sfds");
-
-            CurrentDest = NewDest;
-
-            Nav.SetDestination(CurrentDest.transform.position);
-
-            /* if (CurrentDest == point1)
-             {
-                 print("fsdfsdfdsfds");
-             }*/
-        }
+            print("fsdfsdfdsfds");
+        }*/
+        
 
     }
 

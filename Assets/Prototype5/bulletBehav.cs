@@ -7,6 +7,8 @@ public class bulletBehav : MonoBehaviour
     public float force;
     private Rigidbody rb;
     public float timer;
+
+    public bool evil;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,14 @@ public class bulletBehav : MonoBehaviour
         if (collision.transform.GetComponent<EnemyHealth>() != null)
         {
             collision.transform.GetComponent<EnemyHealth>().Hurt();
+
+            Destroy(gameObject);
+        }
+
+
+        if (collision.transform.GetComponent<PlayerHealth>() != null && evil == true)
+        {
+            collision.transform.GetComponent<PlayerHealth>().hurt();
 
             Destroy(gameObject);
         }

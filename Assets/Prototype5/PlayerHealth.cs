@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -35,6 +36,10 @@ public class PlayerHealth : MonoBehaviour
         if (Countdown >= 0)
         {
             Countdown -= 1 * Time.deltaTime;
+        }
+        if (Countdown < 0)
+        {
+            Countdown = 0;
         }
 
         if (dead == true)
