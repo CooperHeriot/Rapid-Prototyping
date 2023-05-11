@@ -1195,9 +1195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca2a676bf43f9145a3293a44b14fd10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser: {fileID: 0}
-  missile: {fileID: 0}
-  fist: {fileID: 0}
+  laser: {fileID: 1200386328075312061, guid: bf96dda5fb75ad14489719616ac5dfdc, type: 3}
+  missile: {fileID: 7321693189184762032, guid: d271d87d9314af446bc76ca1c3d25ca4, type: 3}
+  fist: {fileID: 8664090442621635505, guid: 00b4c803759bc9348930e0693c019369, type: 3}
   lPoint: {fileID: 0}
   MPoint: {fileID: 0}
   current: {fileID: 0}
