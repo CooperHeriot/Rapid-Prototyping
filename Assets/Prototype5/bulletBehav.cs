@@ -38,7 +38,14 @@ public class bulletBehav : MonoBehaviour
         }
 
 
-        if (collision.transform.GetComponent<PlayerHealth>() != null && evil == true)
+        /* if (collision.transform.GetComponent<PlayerHealth>() != null && evil == true)
+         {
+             collision.transform.GetComponent<PlayerHealth>().hurt();
+
+             Destroy(gameObject);
+         }*/
+
+        if (collision.transform.tag == "Player" && evil == true)
         {
             collision.transform.GetComponent<PlayerHealth>().hurt();
 

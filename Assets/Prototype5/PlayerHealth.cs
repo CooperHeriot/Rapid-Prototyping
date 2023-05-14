@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public float currentHealth = 10;
-    private float maxHp, CD;
+    public float maxHp, CD;
     public float Countdown = 5;
 
     public ChameleonMove CM;
@@ -28,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHp);
 
-        if (currentHealth < maxHp && Countdown != 0)
+        if (currentHealth < maxHp && Countdown <= 0)
         {
             currentHealth += 1 * Time.deltaTime;
         }
@@ -45,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
         if (dead == true)
         {
             CM.enabled = false;
+            gameOver.SetActive(true);
         }
     }
 

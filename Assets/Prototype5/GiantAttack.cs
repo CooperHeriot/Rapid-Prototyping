@@ -51,21 +51,21 @@ public class GiantAttack : MonoBehaviour
             {
                 current = laser;
 
-               // Instantiate(laser, lPoint.transform.position, lPoint.transform.rotation);
+                Instantiate(laser, lPoint.transform.position, lPoint.transform.rotation);
             }
 
             if (choice == 2)
             {
                 current = missile;
 
-               //Instantiate(missile, missile.transform.position, missile.transform.rotation);
+                Instantiate(missile, missile.transform.position, missile.transform.rotation);
             }
 
             if (choice == 3)
             {
-                current = fist;
+                current = laser;
 
-                //Instantiate(missile, missile.transform.position, missile.transform.rotation);
+                Instantiate(laser, lPoint.transform.position, lPoint.transform.rotation);
             }
         }
     }

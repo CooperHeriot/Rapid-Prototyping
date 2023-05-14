@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour
 
     private float maxHP;
 
-    public bool dead;
+    public bool dead, turnOn;
 
     public GameObject onDeath;
 
@@ -26,6 +26,11 @@ public class EnemyHealth : MonoBehaviour
         {
             //dead = true;
             Instantiate(onDeath, transform.position, transform.rotation);
+
+            if (turnOn == true)
+            {
+                onDeath.SetActive(true);
+            }
 
             Destroy(gameObject);
         }

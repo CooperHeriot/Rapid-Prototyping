@@ -17,6 +17,8 @@ public class CamBehav : MonoBehaviour
     private ChameleonMove PC;
 
     private float CamDist;
+
+    public LayerMask LM;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +46,7 @@ public class CamBehav : MonoBehaviour
 
         //dont clip through colliders
         RaycastHit hit;
-        if (Physics.Raycast(UpDownLooker.transform.position, UpDownLooker.transform.forward * -1, out hit, CamDist))
+        if (Physics.Raycast(UpDownLooker.transform.position, UpDownLooker.transform.forward * -1, out hit, CamDist, LM))
         {
             camObj.transform.position = new Vector3(hit.point.x, hit.point.y + 0.9f, hit.point.z);
         } else
