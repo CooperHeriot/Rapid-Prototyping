@@ -6,12 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Prototype5/Scenes/Prototype5Title.unity
-    guid: cd407caf3d868a343bff130608f77605
-  - enabled: 1
-    path: Assets/Prototype5/Scenes/Prototype5.unity
-    guid: f1f194373ff7ecf459be90dbc8713094
-  - enabled: 1
     path: Assets/Title.unity
     guid: 93fb7182484fc244c888aa08685914f4
   - enabled: 1
@@ -44,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Prototype4/Scenes/Prototype4Win.unity
     guid: 9ad5711a780c8684b836d7daf6ce9b7d
+  - enabled: 1
+    path: Assets/Prototype5/Scenes/Prototype5Title.unity
+    guid: cd407caf3d868a343bff130608f77605
+  - enabled: 1
+    path: Assets/Prototype5/Scenes/Prototype5.unity
+    guid: f1f194373ff7ecf459be90dbc8713094
   m_configObjects: {}
